@@ -41,3 +41,4 @@ class Solution {
     }
 }
 ```
+copyOfRange의 from과 to에서 from부터 to의 앞 인덱스까지 복사한다. 기억하자
