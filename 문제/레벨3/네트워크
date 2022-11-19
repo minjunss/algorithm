@@ -1,0 +1,31 @@
+프로그래머스 깊이/너비 우선 탐색(DFS/BFS) 레벨3
+
+```java
+class Solution {
+
+    public int solution(int n, int[][] computers) {
+        int result = 0;
+        boolean[] visited = new boolean[computers.length];
+
+        for (int i = 0; i < visited.length; i++) {
+            if (!visited[i]) {
+                dfs(i, computers, visited);
+                result++;
+            }
+        }
+
+        return result;
+    }
+
+    private void dfs(int depth, int[][] computers, boolean[] visited) {
+
+
+        visited[depth] = true;
+        for (int i = 0; i < computers[depth].length; i++) {
+            if (computers[depth][i] == 1 && !visited[i]) {
+                dfs(i, computers, visited);
+            }
+        }
+    }
+}
+```
